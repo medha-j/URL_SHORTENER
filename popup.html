@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="popup.js"></script>
+    <title>URL Shortener</title>
     <link rel="stylesheet" href="spectre.min.css">
-    <title>LetCode</title>
     <style>
         body {
-            width: 320px;
+            width: 300px;
+            padding: 10px;
+            text-align: center;
+        }
+        input {
+            width: 80%;
+            margin-bottom: 10px;
+        }
+        button {
+            margin: 5px;
+        }
+        #copyMessage {
+            color: green;
+            display: none;
         }
     </style>
 </head>
-
 <body>
-    <div class="card">
-        <div class="card-header">
-            <div class="toast toast-error d-hide">
-                Please enter valid URL
-            </div>
-            <div class="card-title h5">URL Shortener</div>
-            <div class="card-subtitle text-gray">Enter URL</div>
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <input class="form-input" type="text" id="myurl">
-            </div>
-        </div>
-        <div class="card-footer">
-            <div class="loading d-hide"></div>
-            <button class="btn btn-primary" id="shortURL">Generate short URL</button>
-            <div class="toast toast-success d-hide"></div>
-        </div>
-    </div>
+    <h3>URL Shortener</h3>
+    
+    <!-- Input for the URL -->
+    <input type="text" id="urlInput" placeholder="Enter URL here">
+    <button id="shortenBtn">Shorten</button>
+    
+    <br>
 
+    <!-- Display the shortened URL -->
+    <input type="text" id="shortenedUrl" readonly>
+    <button id="copyBtn">Copy</button>
+
+    <p id="copyMessage">Copied!</p>
+
+    <script src="popup.js"></script>
 </body>
-
 </html>
