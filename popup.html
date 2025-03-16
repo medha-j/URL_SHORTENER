@@ -22,6 +22,14 @@
             color: green;
             display: none;
         }
+        #shortenedUrl {
+            display: none; /* Initially hidden until a URL is generated */
+            word-break: break-all;
+            cursor: pointer;
+            color: green ;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -29,14 +37,12 @@
     
     <!-- Input for the URL -->
     <input type="text" id="urlInput" placeholder="Enter URL here">
-    <button id="shortenBtn">Shorten</button>
+    <button id="shortenBtn" class="btn btn-primary">Shorten</button>
     
     <br>
 
-    <!-- Display the shortened URL -->
-    <input type="text" id="shortenedUrl" readonly>
-    <button id="copyBtn">Copy</button>
-
+    <!-- Shortened URL (hidden by default, only appears after generation) -->
+    <a id="shortenedUrl" href="#"></a>
     <p id="copyMessage">Copied!</p>
 
     <script src="popup.js"></script>
